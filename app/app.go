@@ -3,10 +3,12 @@ package app
 import (
 	"log"
 	"net/http"
+
+	"github.com/gorilla/mux"
 )
 
 func Boot() {
-	mux := http.NewServeMux()
+	mux := mux.NewRouter()
 	// routes
 	mux.HandleFunc("/customers", Customers)
 	// start server
