@@ -1,10 +1,14 @@
-package main
+package app
 
 import (
+	"log"
 	"net/http"
 )
 
 func Boot() {
-	http.HandleFunc("/customers", Customers)
-	http.ListenAndServe("localhost:7070", nil)
+	mux := http.NewServeMux()
+	// routes
+	mux.HandleFunc("/customers", Customers)
+	// start server
+	log.Fatal(http.ListenAndServe("localhost:7070", mux))
 }
