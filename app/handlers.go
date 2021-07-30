@@ -6,6 +6,7 @@ import (
 )
 
 type Customer struct {
+	id      int
 	Name    string `json:"fullName"`
 	City    string `json:"city"`
 	Zipcode string `json:"zipcode"`
